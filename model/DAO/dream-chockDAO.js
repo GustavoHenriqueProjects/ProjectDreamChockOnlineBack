@@ -298,7 +298,6 @@ const getAllDataRegisterUser = async function (id) {
                 data_payment
             }
 
-            console.log(dataJson)
             return dataJson
         }
     }
@@ -400,7 +399,6 @@ const verifyAccountEmployee = async function (dateEmployee) {
     let adm = `SELECT id FROM tbl_administrador WHERE email ='${dateEmployee.email}' AND senha ='${dateEmployee.password}'`
     let resultAdm = await prisma.$queryRawUnsafe(adm)
 
-    console.log(resultAdm)
     if (resultAdm.length !== 0) {
         return true
     } else {
